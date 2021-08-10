@@ -1,0 +1,19 @@
+@use '../../scss/config/' as *;
+
+.header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 8rem;
+  width: 100%;
+  z-index: 1000;
+
+  // MEDIA QUERIES
+  @include screen('laptop') {
+    height: 10rem;
+  }
+
+  .container {
+    max-width: 90vw;
+  }
+}
