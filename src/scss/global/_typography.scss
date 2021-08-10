@@ -1,0 +1,40 @@
+@use '../config/' as *;
+
+.main-title {
+  font-size: 5.2rem;
+  color: $white-color;
+  letter-spacing: -0.2rem;
+  line-height: 1;
+  margin-bottom: 1.6rem;
+
+  // MEDIA QUERIES
+  @include screen('tablet') {
+    font-size: 6.2rem;
+  }
+  @include screen('laptop') {
+    font-size: 7.4rem;
+    margin-bottom: 2.4rem;
+  }
+  @include screen('lg laptop') {
+    font-size: 9.8rem;
+    line-height: unset;
+  }
+}
+
+.lead {
+  font-size: 1.8rem;
+  font-weight: 500;
+  color: $white-color;
+  line-height: 1.6;
+  margin-bottom: 2.4rem;
+
+  // MEDIA QUERIES
+  @include screen('laptop') {
+    font-size: 2.4rem;
+    margin-bottom: 6.4rem;
+  }
+  @include screen('lg laptop') {
+    font-size: 3.2rem;
+    line-height: unset;
+  }
+}
