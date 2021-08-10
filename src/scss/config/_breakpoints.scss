@@ -1,0 +1,33 @@
+@use 'sass:math';
+
+$breakpoints: (
+  'phone': 425px,
+  'lg phone': 578px,
+  'tablet': 768px,
+  'laptop': 1024px,
+  'lg laptop': 1200px,
+  'desktop': 1400px,
+  'lg desktop': 1800px,
+) !default;
+
+@function size($args...) {
+  $size: (math.div(map-get($breakpoints, nth($args, 1)), 16px) * 1em);
+  @return $size;
+}
+
+@function orientation($args...) {
+  $orientation: nth($args, 2);
+  @return $orientation;
+}
+
+@mixin screen($args...) {
+  @if index($args, portrait) or index($args, landscape) {
+    @media screen and (min-width: size($args...)) and (orientation: orientation($args...)) {
+      @content;
+    }
+  } @else {
+    @media screen and (min-width: size($args...)) {
+      @content;
+    }
+  }
+}
