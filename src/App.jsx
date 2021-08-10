@@ -1,11 +1,18 @@
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+
+// COMPONENTS //
+import LandingPage from './pages/LandingPage';
+
 // STYLES //
 import './App.scss';
 
 const App = () => {
   return (
-    <section>
-      <h1>Discovr React Application</h1>
-    </section>
+    <Router>
+      <Switch>
+        <Route exact path="/" component={LandingPage} />
+      </Switch>
+    </Router>
   );
 };
 
