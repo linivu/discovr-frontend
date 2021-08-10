@@ -1,9 +1,10 @@
 // COMPONENTS //
+import Home from '../components/page/Home';
 
 const LandingPage = () => {
   return (
     <main className="main">
-      <h1>Landing Page</h1>
+      <Home />
     </main>
   );
 };
