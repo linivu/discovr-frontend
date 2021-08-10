@@ -6,12 +6,6 @@ const task = process.env.npm_lifecycle_event;
 const config = {
   mode: 'development',
 
-  output: {
-    clean: true,
-    filename: 'assets/js/[name].bundle.[fullhash].js',
-    assetModuleFilename: 'assets/images/[hash][ext][query]',
-  },
-
   module: {
     rules: [
       // React and JavaScript
@@ -67,7 +61,12 @@ if (task === 'start') config.devtool = 'source-map';
 if (task === 'build') {
   config.mode = 'production';
 
-  config.module.rules[1].use[0] = MiniCssExtractPlugin.loader;
+  (config.output = {
+    clean: true,
+    filename: 'assets/js/[name].bundle.[fullhash].js',
+    assetModuleFilename: 'assets/images/[hash][ext][query]',
+  }),
+    (config.module.rules[1].use[0] = MiniCssExtractPlugin.loader);
 
   config.module.rules[1].use[2] = {
     loader: 'postcss-loader',
