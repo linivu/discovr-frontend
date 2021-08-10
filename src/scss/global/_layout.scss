@@ -1,0 +1,13 @@
+@use '../config/' as *;
+
+.container {
+  height: 100%;
+  max-width: 85vw;
+  margin: 0 auto;
+}
+
+.grid {
+  height: 100%;
+  display: grid;
+  align-content: center;
+}
