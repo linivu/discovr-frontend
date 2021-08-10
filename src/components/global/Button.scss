@@ -1,0 +1,30 @@
+@use '../../scss/config/' as *;
+
+.btn:link,
+.btn:active,
+.btn:visited {
+  color: $white-color;
+  justify-self: start;
+  text-decoration: none;
+  text-transform: uppercase;
+  @include transitionAll(0.3s);
+}
+
+.btn--text {
+  font-size: 1.8rem;
+  border-bottom: 3px solid $primary-color-1;
+  font-weight: 600;
+
+  &:hover {
+    color: $primary-color-1;
+    border-bottom: 3px solid $white-color;
+  }
+
+  // MEDIA QUERIES
+  @include screen('laptop') {
+    font-size: 2.4rem;
+  }
+  @include screen('lg laptop') {
+    font-size: 3.2rem;
+  }
+}
