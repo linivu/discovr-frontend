@@ -14,5 +14,10 @@
 
   span {
     color: $primary-color;
+    @include transitionAll(0.5s);
+  }
+
+  &.open span {
+    color: $white-color;
   }
 }
