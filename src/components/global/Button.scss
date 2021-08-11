@@ -12,11 +12,11 @@
 
 .btn--text {
   font-size: 1.8rem;
-  border-bottom: 3px solid $primary-color-1;
+  border-bottom: 3px solid $primary-color;
   font-weight: 600;
 
   &:hover {
-    color: $primary-color-1;
+    color: $primary-color;
     border-bottom: 3px solid $white-color;
   }
 
