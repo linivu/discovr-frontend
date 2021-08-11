@@ -1,0 +1,74 @@
+@use '../../scss/config/' as *;
+
+.nav {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  display: grid;
+  place-content: center;
+  transform: translateX(-100%);
+
+  &.open {
+    @include transitionAll(0.5s);
+    transition-delay: 0.5s;
+    transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transform: translateX(0);
+  }
+
+  // MEDIA QUERIES
+  @include screen('laptop') {
+    all: unset;
+  }
+
+  &__list {
+    list-style: none;
+    text-align: center;
+
+    // MEDIA QUERIES
+    @include screen('laptop') {
+      display: flex;
+      align-items: center;
+      gap: 2.4rem;
+    }
+  }
+
+  &__link {
+    display: block;
+    color: $white-color;
+    line-height: 3;
+    font-size: 2.4rem;
+    text-decoration: none;
+    text-transform: uppercase;
+
+    // MEDIA QUERIES
+    @include screen('phone', landscape) {
+      line-height: 2;
+    }
+    @include screen('laptop') {
+      font-size: 1.6rem;
+      font-weight: 500;
+      letter-spacing: 0.2rem;
+      line-height: unset;
+    }
+  }
+
+  .btn {
+    line-height: 3;
+
+    // MEDIA QUERIES
+    @include screen('phone', landscape) {
+      line-height: 2;
+    }
+    @include screen('laptop') {
+      padding: 1.2rem 3.6rem;
+      line-height: unset;
+      margin-left: auto;
+      font-size: 1.6rem;
+      color: $white-color;
+      background-color: $primary-color;
+      font-weight: 500;
+    }
+  }
+}
