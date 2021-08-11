@@ -13,7 +13,12 @@
     height: 10rem;
   }
 
+  .grid {
+    grid-template-columns: min-content 1fr;
+    align-items: center;
+  }
+
   .container {
-    max-width: 90vw;
+    max-width: 87.5vw;
   }
 }
