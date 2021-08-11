@@ -3,14 +3,21 @@
 .btn:link,
 .btn:active,
 .btn:visited {
-  color: $white-color;
+  display: block;
   justify-self: start;
   text-decoration: none;
   text-transform: uppercase;
   @include transitionAll(0.3s);
 }
 
+.btn--white {
+  border-radius: 10rem;
+  color: $white-color;
+  font-size: 2.4rem;
+}
+
 .btn--text {
+  color: $white-color;
   font-size: 1.8rem;
   border-bottom: 3px solid $primary-color;
   font-weight: 600;
