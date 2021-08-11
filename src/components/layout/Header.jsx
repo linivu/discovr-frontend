@@ -2,6 +2,7 @@ import { useState } from 'react';
 
 // COMPONENTS //
 import Logo from '../global/Logo';
+import Navigation from './Navigation';
 import HamburgerMenu from './HamburgerMenu';
 
 // STYLES //
@@ -14,6 +15,7 @@ const Header = () => {
     <header className="header">
       <div className=" grid container">
         <Logo isOpen={isOpen} />
+        <Navigation isOpen={isOpen} setIsOpen={setIsOpen} />
         <HamburgerMenu isOpen={isOpen} setIsOpen={setIsOpen} />
       </div>
     </header>
